@@ -753,84 +753,100 @@
         }
         
         @media(max-width: 768px) {
-            /* ... (Aturan CSS mobile yang sudah ada untuk nav, hero, skills) ... */
+            /* ... (Aturan CSS mobile kamu yang sudah ada untuk nav, hero, skills, about) ... */
 
-            /* ===== PENYESUAIAN TAMBAHAN UNTUK ABOUT ME ===== */
-            #about .about-content {
-                padding: 1.5rem 1rem; /* Kurangi padding kiri/kanan sedikit lagi */
-                /* text-align: left; <-- Biarkan ini jika sudah ada */
-            }
-
-            /* Hapus #about .about-img dan #about .about-img img jika sudah ditambahkan sebelumnya */
-            /* Kita gunakan aturan dari @media 992px saja untuk .about-img */
-             #about .about-img img {
-                height: auto;
-                max-width: 80%; /* Coba gunakan persentase agar lebih fleksibel */
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                border-width: 2px; /* Tipiskan border gambar sedikit */
-            }
-
-            #about .about-text h3 {
-                font-size: 1.3rem; /* Sedikit kecilkan judul sub-bagian */
-                 text-align: center; /* Judul ini boleh rata tengah */
-            }
-             #about .about-text p {
-                 text-align: justify; /* Coba buat teks rata kiri-kanan agar lebih rapi */
-             }
-             #about .about-info li {
-                 /* margin-bottom: 0.75rem; <-- Biarkan jika sudah ada */
-                 /* word-wrap: break-word; <-- Biarkan jika sudah ada */
-                 font-size: 0.9rem; /* Sedikit kecilkan teks info kontak */
-                 text-align: left; /* Pastikan list rata kiri */
-            }
-             /* ================================================= */
-
-             /* ===== PENYESUAIAN UNTUK CONTACT ME ===== */
+             /* ===== PERBAIKAN UNTUK CONTACT ME (VERSI BARU) ===== */
              .contact-content {
-                 padding: 1.5rem 1rem; /* Kurangi padding di dalam kotak contact */
-                 grid-template-columns: 1fr; /* Pastikan ini sudah ada (dari @media 992px) */
+                 /* Menghapus grid agar tumpuk alami */
+                 display: block; /* Ganti dari grid ke block */
+                 padding: 1.5rem 1rem; /* Atur padding */
              }
 
              #contact form {
-                 gap: 0.8rem; /* Kurangi sedikit jarak antar input form */
+                 /* Pastikan form mengisi lebar */
+                 width: 100%;
+                 margin-bottom: 2.5rem; /* Beri jarak bawah ke Contact Info */
+             }
+
+             #contact .form-group {
+                 /* Biarkan default (flex-direction: column) */
+                 margin-bottom: 1rem; /* Jarak antar grup (label+input) */
+             }
+
+             #contact label {
+                 display: block; /* Pastikan label di atas input */
+                 margin-bottom: 0.3rem; /* Jarak kecil label ke input */
+                 font-size: 0.9rem;
+                 color: var(--text-secondary);
              }
 
              #contact input,
              #contact textarea {
-                 padding: 0.7rem; /* Sedikit kurangi padding input */
-                 font-size: 0.9rem; /* Kecilkan font input sedikit */
+                 width: 100%; /* Buat input/textarea mengisi lebar form */
+                 padding: 0.8rem; /* Kembalikan padding default atau sesuaikan */
+                 font-size: 1rem; /* Kembalikan font size default atau sesuaikan */
+                 border: 1px solid #ddd; /* Pastikan border terlihat */
+                 border-radius: 5px;
+                 box-sizing: border-box; /* Penting agar padding tidak menambah lebar */
              }
-             
+
+            #contact textarea {
+                min-height: 120px; /* Atur tinggi minimum textarea */
+            }
+
+             #contact .btn {
+                 /* Atur tombol agar tidak terlalu lebar jika perlu */
+                 width: auto; /* Lebar otomatis sesuai teks */
+                 padding: 0.8rem 1.5rem; /* Sesuaikan padding tombol */
+                 margin-top: 0.5rem; /* Beri sedikit jarak atas */
+             }
+
              .contact-info {
-                  margin-top: 2rem; /* Beri jarak atas antara form dan info kontak */
+                  /* Tidak perlu margin-top lagi karena .contact-content bukan grid */
+                  width: 100%; /* Pastikan mengisi lebar */
              }
-             
+
              .contact-info h3 {
-                  text-align: center; /* Judul "Contact Info" boleh rata tengah */
+                  text-align: center;
                   margin-bottom: 1.5rem;
+                  font-size: 1.3rem; /* Sesuaikan ukuran judul */
              }
 
              .contact-info .info-item {
-                 margin-bottom: 1rem; /* Kurangi jarak antar item info */
+                 margin-bottom: 1rem;
+                 display: flex; /* Pastikan ikon dan teks sejajar */
+                 align-items: flex-start; /* Rata atas ikon dan teks */
              }
 
              .contact-info .info-icon {
-                 font-size: 1.3rem; /* Kecilkan ikon sedikit */
-                 width: 35px; /* Sesuaikan lebar container ikon */
-                 margin-right: 0.8rem; /* Kurangi jarak ikon ke teks */
+                 font-size: 1.2rem; /* Ukuran ikon */
+                 width: 30px; /* Lebar area ikon */
+                 margin-right: 1rem; /* Jarak ikon ke teks */
+                 text-align: center;
+                 flex-shrink: 0; /* Agar ikon tidak mengecil */
+                 padding-top: 2px; /* Sedikit turunkan ikon agar sejajar teks */
              }
-             .contact-info .info-text h4 {
-                  font-size: 0.95rem; /* Sedikit kecilkan judul (Address, Phone, Email) */
+             .contact-info .info-text {
+                 flex-grow: 1; /* Agar teks mengambil sisa ruang */
              }
-             .contact-info .info-text span {
-                  font-size: 0.85rem; /* Kecilkan teks info kontak */
-                  word-break: break-all; /* Pastikan email panjang bisa pindah baris */
-             }
-             
 
-        } 
+             .contact-info .info-text h4 {
+                  font-size: 1rem;
+                  margin-bottom: 0.2rem; /* Jarak kecil judul ke teks */
+             }
+             .contact-info .info-text span,
+             .contact-info .info-text span a { /* Targetkan juga link di dalamnya */
+                  font-size: 0.9rem;
+                  word-break: break-all; /* Agar teks panjang/email pecah baris */
+                  color: var(--text-secondary); /* Pastikan warna link konsisten */
+                  text-decoration: none; /* Hapus garis bawah link jika tidak mau */
+             }
+              .contact-info .info-text span a:hover {
+                  color: var(--primary-color); /* Warna saat hover */
+              }
+             /* ================================================ */
+
+        } /* Akhir dari @media(max-width: 768px) */
 
     </style>
 </head>
