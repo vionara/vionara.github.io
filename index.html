@@ -753,29 +753,34 @@
         }
         
         @media(max-width: 768px) {
-            nav {
-                flex-direction: column;
-            }
-            nav ul {
-                padding: 1rem 0;
-                flex-wrap: wrap; 
-                justify-content: center;
-            }
-            nav ul li {
-                margin: 0.2rem 0.5rem;
-            }
             
-            #hero h1 {
-                font-size: 2.5rem;
+            #about .about-content {
+                padding: 1.5rem; /* Kurangi padding dari 2.5rem agar tidak terlalu mepet */
+                text-align: left; /* Kembalikan teks ke rata kiri, agar list tidak aneh */
             }
-            #hero h2 {
-                font-size: 1.5rem;
+
+            #about .about-img {
+                /* Margin ini sudah ada di @media 992px, pastikan masih ada */
+                /* Jika tidak ada, tambahkan baris ini: */
+                margin: 0 auto 1.5rem auto; /* Atur margin bawah jadi 1.5rem */
             }
-            /* Pastikan skills tetap 1 kolom di mobile */
-             #skills .skills-content {
-                grid-template-columns: 1fr; 
+
+            #about .about-img img {
+                height: auto; /* Hapus tinggi tetap agar gambar proporsional */
+                max-width: 280px; /* Batasi lebar maksimum gambar agar tidak terlalu besar */
+                 /* Baris di bawah ini penting untuk membuat max-width bekerja dengan margin auto */
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
             }
-        }
+
+            #about .about-info li {
+                margin-bottom: 0.75rem; /* Beri sedikit jarak antar item list */
+                word-wrap: break-word; /* Agar email/alamat panjang bisa pindah baris */
+            }
+             /* ============================================== */
+
+        } 
 
     </style>
 </head>
