@@ -753,98 +753,57 @@
         }
         
         @media(max-width: 768px) {
-            /* ... (Aturan CSS mobile kamu yang sudah ada untuk nav, hero, skills, about) ... */
+            /* ... (Aturan CSS mobile kamu yang sudah ada) ... */
 
-             /* ===== PERBAIKAN UNTUK CONTACT ME (VERSI BARU) ===== */
-             .contact-content {
-                 /* Menghapus grid agar tumpuk alami */
-                 display: block; /* Ganti dari grid ke block */
-                 padding: 1.5rem 1rem; /* Atur padding */
-             }
-
-             #contact form {
-                 /* Pastikan form mengisi lebar */
-                 width: 100%;
-                 margin-bottom: 2.5rem; /* Beri jarak bawah ke Contact Info */
-             }
-
-             #contact .form-group {
-                 /* Biarkan default (flex-direction: column) */
-                 margin-bottom: 1rem; /* Jarak antar grup (label+input) */
-             }
-
-             #contact label {
-                 display: block; /* Pastikan label di atas input */
-                 margin-bottom: 0.3rem; /* Jarak kecil label ke input */
-                 font-size: 0.9rem;
-                 color: var(--text-secondary);
-             }
-
-             #contact input,
-             #contact textarea {
-                 width: 100%; /* Buat input/textarea mengisi lebar form */
-                 padding: 0.8rem; /* Kembalikan padding default atau sesuaikan */
-                 font-size: 1rem; /* Kembalikan font size default atau sesuaikan */
-                 border: 1px solid #ddd; /* Pastikan border terlihat */
-                 border-radius: 5px;
-                 box-sizing: border-box; /* Penting agar padding tidak menambah lebar */
-             }
-
-            #contact textarea {
-                min-height: 120px; /* Atur tinggi minimum textarea */
+            /* ===== PERBAIKAN UNTUK NAVIGASI MOBILE ===== */
+            nav {
+                /* flex-direction: column; <-- Biarkan jika sudah ada */
+                padding: 1rem; /* Sedikit kurangi padding atas/bawah nav */
             }
+            nav .logo {
+                 margin-bottom: 0.5rem; /* Beri sedikit jarak bawah dari logo ke menu */
+            }
+            nav ul {
+                /* padding: 1rem 0; <-- Hapus/komentari baris ini jika ada */
+                padding: 0; /* Hapus padding atas/bawah ul */
+                /* flex-wrap: wrap; <-- Biarkan jika sudah ada */
+                /* justify-content: center; <-- Biarkan jika sudah ada */
+                width: 100%; /* Pastikan ul mengisi lebar */
+            }
+            nav ul li {
+                /* margin: 0.2rem 0.5rem; <-- Hapus/komentari baris ini */
+                margin: 0 0.4rem; /* Atur margin hanya kiri/kanan, kurangi sedikit */
+                display: inline-block; /* Agar bisa wrap dengan baik */
+            }
+             nav ul li a {
+                 font-size: 0.85rem; /* Kecilkan sedikit font menu */
+                 padding: 0.3rem 0; /* Beri sedikit padding atas/bawah agar tidak terlalu rapat jika wrap */
+                 display: inline-block; /* Agar padding bekerja */
+             }
+             /* ========================================= */
 
-             #contact .btn {
-                 /* Atur tombol agar tidak terlalu lebar jika perlu */
-                 width: auto; /* Lebar otomatis sesuai teks */
-                 padding: 0.8rem 1.5rem; /* Sesuaikan padding tombol */
-                 margin-top: 0.5rem; /* Beri sedikit jarak atas */
+            /* ===== PERBAIKAN UNTUK ABOUT TEXT MOBILE ===== */
+             #about .about-text {
+                 padding: 0 0.5rem; /* Beri sedikit padding kiri/kanan di dalam teks */
              }
+             #about .about-text p {
+                 /* text-align: justify; <-- Biarkan jika sudah ada */
+                 line-height: 1.7; /* Tambah sedikit jarak antar baris paragraf */
+                 margin-bottom: 1.2rem; /* Tambah jarak bawah paragraf */
+             }
+             #about .about-info {
+                  padding-top: 0.5rem; /* Kurangi jarak atas sebelum list info */
+             }
+             #about .about-info li {
+                 /* margin-bottom: 0.75rem; <-- Biarkan jika sudah ada */
+                 /* word-wrap: break-word; <-- Biarkan jika sudah ada */
+                 /* font-size: 0.9rem; <-- Biarkan jika sudah ada */
+                 /* text-align: left; <-- Biarkan jika sudah ada */
+                 line-height: 1.6; /* Atur jarak antar baris jika teks info wrap */
+             }
+             /* =========================================== */
 
-             .contact-info {
-                  /* Tidak perlu margin-top lagi karena .contact-content bukan grid */
-                  width: 100%; /* Pastikan mengisi lebar */
-             }
-
-             .contact-info h3 {
-                  text-align: center;
-                  margin-bottom: 1.5rem;
-                  font-size: 1.3rem; /* Sesuaikan ukuran judul */
-             }
-
-             .contact-info .info-item {
-                 margin-bottom: 1rem;
-                 display: flex; /* Pastikan ikon dan teks sejajar */
-                 align-items: flex-start; /* Rata atas ikon dan teks */
-             }
-
-             .contact-info .info-icon {
-                 font-size: 1.2rem; /* Ukuran ikon */
-                 width: 30px; /* Lebar area ikon */
-                 margin-right: 1rem; /* Jarak ikon ke teks */
-                 text-align: center;
-                 flex-shrink: 0; /* Agar ikon tidak mengecil */
-                 padding-top: 2px; /* Sedikit turunkan ikon agar sejajar teks */
-             }
-             .contact-info .info-text {
-                 flex-grow: 1; /* Agar teks mengambil sisa ruang */
-             }
-
-             .contact-info .info-text h4 {
-                  font-size: 1rem;
-                  margin-bottom: 0.2rem; /* Jarak kecil judul ke teks */
-             }
-             .contact-info .info-text span,
-             .contact-info .info-text span a { /* Targetkan juga link di dalamnya */
-                  font-size: 0.9rem;
-                  word-break: break-all; /* Agar teks panjang/email pecah baris */
-                  color: var(--text-secondary); /* Pastikan warna link konsisten */
-                  text-decoration: none; /* Hapus garis bawah link jika tidak mau */
-             }
-              .contact-info .info-text span a:hover {
-                  color: var(--primary-color); /* Warna saat hover */
-              }
-             /* ================================================ */
+            /* ... (Aturan CSS mobile kamu yang lain untuk contact, dll) ... */
 
         } /* Akhir dari @media(max-width: 768px) */
 
