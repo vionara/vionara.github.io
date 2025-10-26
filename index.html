@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viona Rahmawati - Personal Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Palette Warna (Colorful) */
+            --primary-color: #FF416C;
+            --primary-gradient: linear-gradient(45deg, #FF4B2B, #FF416C);
+            
+            --bg-light: #f8f9fa;  /* Abu-abu sangat muda */
+            --bg-dark: #ffffff;   /* Putih */
+            
+            --text-primary: #333333; /* Abu-abu tua (untuk teks) */
+            --text-secondary: #555555; /* Abu-abu medium */
+            
+            --shadow-soft: 0 5px 15px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light); /* Latar belakang utama */
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 2rem;
+        }
+
+        /* 1. Navigasi */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+            background: var(--bg-dark);
+            box-shadow: var(--shadow-soft);
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        nav .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--primary-color);
+        }
+        
+        /* 2. Section Umum */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: var(--primary-gradient);
+            color: var(--primary-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+        }
+
+        /* 3. Hero Section */
+        #hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 2rem;
+            color: #ffffff; 
+            position: relative; 
+            overflow: hidden; 
+        }
+        
+        #hero-background-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            z-index: 0; 
+            transition: background-image 1s ease-in-out; 
+        }
+
+         #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+            z-index: 1; 
+         }
+
+        #hero .hero-content {
+            position: relative;
+            z-index: 2; 
+        }
+
+
+        #hero h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            color: #f0f0f0; 
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7); 
+        }
+
+        #hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7); 
+        }
+
+        #hero h1 .typing-text {
+            color: #ffffff; 
+            border-right: 3px solid #ffffff;
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #ffffff }
+        }
+        
+        .btn {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.8rem;
+            background: var(--primary-gradient); 
+            color: #ffffff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.9); 
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-gradient);
+            color: #ffffff;
+            border-color: var(--primary-color);
+        }
+        
+        /* 4. About Section */
+        #about .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: center;
+            background: var(--bg-dark);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        #about .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            border: 3px solid var(--primary-color);
+            object-fit: cover;
+            height: 400px;
+        }
+        
+        #about .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        #about .about-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        /* 5. Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .service-card {
+            background: var(--bg-dark);
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: var(--primary-gradient);
+            color: var(--primary-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* 6. Skills Section */
+        #skills .skills-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Tetap 2 kolom */
+            gap: 2rem;
+            background: var(--bg-dark);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .skill-item .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .skill-bar {
+            width: 100%;
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background: var(--primary-gradient);
+            border-radius: 10px;
+            transform: translateX(-100%);
+            transition: transform 1s ease-out;
+        }
+        
+        .skill-level.active {
+            transform: translateX(0);
+        }
+
+        /* 7. Call to Action (Hire Me) Section */
+        #cta-section {
+            background: var(--primary-gradient);
+            padding: 4rem 2rem;
+            text-align: center;
+            color: #ffffff;
+            border-radius: 10px;
+        }
+        
+        #cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        #cta-section p {
+            font-size: 1.1rem;
+            color: #f0f0f0;
+            max-width: 600px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        /* 8. Projects Section */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-dark);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .project-card .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+        }
+
+        .project-card p {
+            color: var(--text-secondary);
+            margin: 0.5rem 0 1rem;
+        }
+        
+        .project-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* 9. Testimonials Section */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .testimonial-card {
+            background: var(--bg-dark);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .testimonial-card .quote {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        .testimonial-author h4 {
+            color: var(--text-primary);
+            font-size: 1rem;
+            margin: 0;
+        }
+        
+        .testimonial-author span {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* 10. Experience Section (BARU) */
+        .timeline {
+            position: relative;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        /* Garis vertikal di tengah */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            opacity: 0.3;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        /* Kontainer untuk setiap item pengalaman */
+        .timeline-item {
+            padding: 1rem 2.5rem;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        /* Lingkaran pada timeline */
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--bg-dark);
+            border: 4px solid var(--primary-color);
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        /* Item di sebelah kiri */
+        .timeline-left {
+            left: 0;
+            padding-right: 2.5rem; /* Menambah padding agar tidak terlalu mepet garis */
+        }
+        /* Item di sebelah kanan */
+        .timeline-right {
+            left: 50%;
+            padding-left: 2.5rem; /* Menambah padding agar tidak terlalu mepet garis */
+        }
+        /* Atur panah untuk item kiri */
+        .timeline-left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid var(--bg-dark);
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent var(--bg-dark);
+        }
+        /* Atur panah untuk item kanan */
+        .timeline-right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid var(--bg-dark);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent var(--bg-dark) transparent transparent;
+        }
+        /* Posisikan lingkaran untuk item kanan */
+        .timeline-right::after {
+            left: -10px;
+        }
+        /* Konten di dalam kotak */
+        .timeline-content {
+            padding: 1.5rem;
+            background-color: var(--bg-dark);
+            position: relative;
+            border-radius: 8px;
+            box-shadow: var(--shadow-soft);
+        }
+        .timeline-content .date {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+         .timeline-content h4 {
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+        .timeline-content p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            /* Menambahkan margin bottom agar ada jarak antar paragraf deskripsi */
+            margin-bottom: 0.5rem; 
+        }
+        /* Menghilangkan margin bottom di paragraf terakhir */
+        .timeline-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Responsive Timeline */
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid var(--bg-dark);
+                border-width: 10px 10px 10px 0;
+                border-color: transparent var(--bg-dark) transparent transparent;
+            }
+            .timeline-left::after, .timeline-right::after {
+                left: 21px; /* Sesuaikan posisi lingkaran */
+            }
+            .timeline-right {
+                left: 0%;
+            }
+        }
+
+
+        /* 11. Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            background: var(--bg-dark);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        #contact .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contact label {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        #contact input,
+        #contact textarea {
+            background: #fdfdfd;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 0.8rem;
+            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        #contact .btn {
+            cursor: pointer;
+            width: fit-content;
+        }
+        
+        .contact-info .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info .info-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            text-align: center;
+            margin-right: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .contact-info .info-text h4 {
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+        
+        .contact-info .info-text span {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* 12. Footer */
+        footer {
+            padding: 4rem 2rem 2rem 2rem;
+            background: #333; 
+            color: var(--text-secondary);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-widget h3 {
+            color: #ffffff;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-widget p {
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-widget ul {
+            list-style: none;
+        }
+        
+        .footer-widget ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-widget ul li a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-widget ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* 13. Animasi Scroll */
+        .reveal {
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* 14. Responsive Design */
+        @media(max-width: 992px) {
+            #about .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            #about .about-img {
+                margin: 0 auto 2rem auto;
+                height: auto; 
+            }
+            #skills .skills-content {
+                grid-template-columns: 1fr; /* Jadi 1 kolom di tablet */
+            }
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media(max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            nav ul {
+                padding: 1rem 0;
+                flex-wrap: wrap; 
+                justify-content: center;
+            }
+            nav ul li {
+                margin: 0.2rem 0.5rem;
+            }
+            
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+            #hero h2 {
+                font-size: 1.5rem;
+            }
+            /* Pastikan skills tetap 1 kolom di mobile */
+             #skills .skills-content {
+                grid-template-columns: 1fr; 
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#hero" class="logo">Viona<span>.</span>Ra</a>
+        <ul>
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero">
+        <div id="hero-background-slider"></div> 
+        <div class="hero-content"> 
+            <h2>Hello, I'm Viona Rahmawati</h2>
+            <h1>I'm a <span class="typing-text"></span></h1>
+            <p><a href="#contact" class="btn">Hire me</a> <a href="#" class="btn btn-secondary">Download CV</a></p>
+        </div>
+    </section>
+
+    <section id="about" class="container reveal">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">
+            Selamat datang! Saya adalah seorang Creative UI/UX Design & Developer.
+        </p>
+        <div class="about-content">
+            <div class="about-img">
+                <img src="images/Viona1.jpeg" alt="Viona Rahmawati"> 
+            </div>
+            <div class="about-text">
+                <h3>Creative UI/UX Designer & Developer</h3>
+                <p>
+                    Dengan pengalaman lebih dari 1 tahun, saya bersemangat dalam menciptakan solusi yang tidak hanya fungsional tetapi juga memiliki nilai estetika.
+                </p>
+                <p>
+                    Keahlian utama saya meliputi branding, UI/UX design, dan Front-End Development. Saya senang mengubah ide kompleks menjadi desain yang indah dan intuitif untuk pengguna.
+                </p>
+                <ul class="about-info" style="list-style: none; padding-top: 1rem;">
+                    <li style="margin-bottom: 0.5rem;"><strong>Name:</strong> Viona Rahmawati</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Email:</strong> vionarahmawati3904@gmail.com</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Phone:</strong> +62-857-4116-3660</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Address:</strong> Darmaraja, Kab. Sumedang, Jawa Barat</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="container reveal">
+        <h2 class="section-title">My Services</h2>
+        <p class="section-subtitle">Spesialisasi saya adalah menciptakan pengalaman pengguna yang intuitif dan desain visual yang menarik.</p>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-pencil-ruler"></i></div>
+                <h3>Web Design</h3>
+                <p>Menciptakan desain web yang modern, responsif, dan berfokus pada pengalaman pengguna.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-code"></i></div>
+                <h3>Web Development</h3>
+                <p>Mengubah desain statis menjadi website yang fungsional dan interaktif.</p>
+            </div>
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+                <h3>Branding</h3>
+                <p>Membangun identitas brand yang kuat dan konsisten di seluruh platform digital.</p>
+            </div>
+            </div>
+    </section>
+
+    <section id="skills" class="container reveal">
+        <h2 class="section-title">My Skills</h2>
+        <p class="section-subtitle">Berfokus pada hasil, saya ahli dalam menerapkan berbagai keterampilan untuk mencapai tujuan proyek.</p>
+        <div class="skills-content">
+            <div class="skills-column">
+                <div class="skill-item">
+                    <div class="skill-info"><span>HTML</span><span>98%</span></div>
+                    <div class="skill-bar"><div class="skill-level" style="width: 98%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>CSS</span><span>95%</span></div>
+                    <div class="skill-bar"><div class="skill-level" style="width: 95%;"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>jQuery</span><span>68%</span></div>
+                    <div class="skill-bar"><div class="skill-level" style="width: 68%;"></div></div>
+                </div>
+            </div>
+            <div class="skills-column">
+                <div class="skill-item">
+                    <div class="skill-info"><span>WordPress</span><span>83%</span></div>
+                    <div class="skill-bar"><div class="skill-level" style="width: 83%;"></div></div>
+                </div>
+                 <div class="skill-item">
+                    <div class="skill-info"><span>UI/UX Design</span><span>90%</span></div> 
+                    <div class="skill-bar"><div class="skill-level" style="width: 90%;"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta-section" class="container reveal">
+        <h2>Have a project on your mind?</h2>
+        <p>Saya selalu antusias untuk berdiskusi tentang ide-ide baru dan tantangan kreatif. Mari wujudkan proyek Anda bersama.</p>
+        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+    </section>
+
+    <section id="projects" class="container reveal">
+        <h2 class="section-title">My Projects</h2>
+        <p class="section-subtitle">Beberapa pekerjaan yang telah saya selesaikan baru-baru ini.</p>
+        <div class="project-grid">
+            
+            <div class="project-card reveal">
+                <img src="images/TravelIn2.jpeg" alt="Travel App UI Design"> 
+                <div class="project-info">
+                    <h3>Travel App UI Design (Figma)</h3>
+                    <p>Prototipe desain antarmuka pengguna untuk aplikasi pemesanan perjalanan.</p>
+                    <a href="https://www.figma.com/proto/jtGTwgd80hjCoHHsuVvucG/Travel-In---Kelompok-4?node-id=29-3&t=QyiThFgEuYVLgnXK-1" target="_blank" rel="noopener noreferrer">View Figma Prototype &rarr;</a>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <img src="images/foodweb.jpeg" alt="Food Website UI Design"> 
+                <div class="project-info">
+                    <h3>Food Website UI Design (Figma)</h3>
+                    <p>Desain antarmuka pengguna untuk website pemesanan makanan.</p>
+                    <a href="https://www.figma.com/design/QKA6qieaDelh3XgaCZFDfl/Food-Website?node-id=1-3&t=tJhaanqF7zyEvFE2-1" target="_blank" rel="noopener noreferrer">View Figma Design &rarr;</a> 
+                </div>
+            </div>
+            <div c<div class="project-card reveal">
+                <img src="images/hotelacacia2.jpeg" alt="UI/UX Design Challenge"> 
+                <div class="project-info">
+                    <h3>UI/UX Design Challenge (Figma)</h3>
+                    <p>Desain antarmuka pengguna hasil dari sebuah challenge desain.</p>
+                    <a href="https://www.figma.com/proto/tuOCLoDSYIJMnPsREu5YXk/Challange-Vio?node-id=35-479&t=0sJdYXQkl4nxw5Ex-1" target="_blank" rel="noopener noreferrer">View Figma Prototype &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="container reveal">
+        <h2 class="section-title">What Clients Say</h2>
+        <p class="section-subtitle">Masukan berharga dari orang-orang yang pernah bekerja sama dengan saya.</p>
+        <div class="testimonial-grid">
+            <div class="testimonial-card reveal">
+                <p class="quote">"Bekerja dengan Viona sangat menyenangkan. Desainnya tidak hanya indah secara visual tetapi juga sangat fungsional dan intuitif."</p>
+                <div class="testimonial-author">
+                    <img src="images/person_1.jpg" alt="Client 1"> 
+                    <div>
+                        <h4>Roger Scott</h4>
+                        <span>Marketing Manager</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <p class="quote">"Prosesnya cepat dan hasilnya melebihi ekspektasi. Website kami sekarang terlihat jauh lebih profesional."</p>
+                <div class="testimonial-author">
+                    <img src="images/bg_2.jpg" alt="Client 2"> 
+                    <div>
+                        <h4>Jane Doe</h4>
+                        <span>CEO, Startup Inc.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal">
+                <p class="quote">"Kemampuan Viona dalam memahami branding kami dan menerjemahkannya ke dalam desain visual sungguh luar biasa."</p>
+                <div class="testimonial-author">
+                    <img src="images/about.jpg" alt="Client 3"> 
+                    <div>
+                        <h4>Mark Smith</h4>
+                        <span>Project Owner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="container reveal">
+        <h2 class="section-title">Work Experience</h2>
+        <p class="section-subtitle">Perjalanan profesional saya sejauh ini.</p>
+        
+        <div class="timeline">
+            
+            <div class="timeline-item timeline-left reveal">
+                <div class="timeline-content">
+                    <div class="date">September 2025 (Proyek Jangka Pendek)</div>
+                    <h3>Event Specialist & Sosialisasi (Freelance)</h3>
+                    <h4>Science Society (Bimbingan Belajar Kedinasan)</h4>
+                    <p>Melaksanakan program sosialisasi intensif selama 3 hari (10, 12, 16 September) untuk mempromosikan program bimbingan belajar kedinasan Science Society.</p>
+                    <p>Menyampaikan presentasi informatif dan persuasif kepada calon siswa yang mau masuk perguruan tinggi kedinasan mengenai kurikulum, keunggulan, dan prospek karir.</p>
+                    <p>Berkontribusi langsung pada upaya akuisisi siswa baru melalui presentasi yang jelas dan meyakinkan.</p>
+                </div>
+            </div>
+            
+             <div class="timeline-item timeline-right reveal">
+                <div class="timeline-content">
+                    <div class="date">Jan 2023 - Mei 2023</div> 
+                    <h3>Anggota Tim Desain UI/UX</h3>
+                    <h4>UKM Tahungoding (Organisasi Mahasiswa)</h4>
+                    <p>Berkolaborasi aktif dengan tim dalam proyek desain UI/UX internal organisasi.</p>
+                    <p>Terlibat langsung dalam proses brainstorming, pembuatan wireframe, dan prototyping aplikasi.</p>
+                    <p>Membantu menyiapkan aset desain yang diperlukan oleh tim developer Tahungoding.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="container reveal">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-subtitle">Punya proyek atau pertanyaan? Jangan ragu untuk menghubungi saya melalui form di bawah ini.</p>
+        <div class="contact-content">
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            
+            <div class="contact-info">
+                <h3>Contact Info</h3>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info-text">
+                        <h4>Address</h4>
+                        <span>Darmaraja, Kab. Sumedang, Jawa Barat</span>
+                    </div>
+                </div>
+                 <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="info-text">
+                        <h4>Phone</h4>
+                        <span><a href="tel:+62-857-4116-3660">+62-857-4116-3660</a></span>
+                    </div>
+                </div>
+                 <div class="info-item">
+                    <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="info-text">
+                        <h4>Email</h4>
+                        <span><a href="mailto:vionarahmawati3904@gmail.com">vionarahmawati3904@gmail.com</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-widget">
+                <h3>Viona<span>.</span></h3>
+                <p>Creative UI/UX Designer & Developer, mengubah ide menjadi solusi digital yang fungsional dan indah.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+             <div class="footer-widget">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-widget">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Branding</a></li>
+                    </ul>
+            </div>
+
+             <div class="footer-widget">
+                <h3>Have a Question?</h3>
+                <ul style="list-style-type: none;">
+                    <li style="display: flex; margin-bottom: 0.5rem;">
+                        <span style="margin-right: 0.5rem;"><i class="fas fa-map-marker-alt"></i></span>
+                        <span>Darmaraja, Sumedang, Jawa Barat</span>
+                    </li>
+                    <li style="display: flex; margin-bottom: 0.5rem;">
+                         <span style="margin-right: 0.5rem;"><i class="fas fa-phone-alt"></i></span>
+                        <span>+62-857-4116-3660</span>
+                    </li>
+                    <li style="display: flex; margin-bottom: 0.5rem;">
+                         <span style="margin-right: 0.5rem;"><i class="fas fa-envelope"></i></span>
+                        <span style="word-break: break-all;">vionarahmawati3904 @gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <script>document.write(new Date().getFullYear());</script> Viona Rahmawati. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // ===================================================
+            // == KODE: PENGUBAH TEMA WARNA ACAK ==
+            // ===================================================
+            const colorThemes = [
+                { color: '#FF416C', gradient: 'linear-gradient(45deg, #FF4B2B, #FF416C)' },
+                { color: '#1a237e', gradient: 'linear-gradient(45deg, #1a237e, #283593)' },
+                { color: '#00796B', gradient: 'linear-gradient(45deg, #004D40, #00796B)' },
+                { color: '#6A1B9A', gradient: 'linear-gradient(45deg, #4A148C, #8E24AA)' },
+                { color: '#E65100', gradient: 'linear-gradient(45deg, #FF6D00, #FF9100)' }
+            ];
+            const randomIndex = Math.floor(Math.random() * colorThemes.length);
+            const selectedTheme = colorThemes[randomIndex];
+            document.documentElement.style.setProperty('--primary-color', selectedTheme.color);
+            document.documentElement.style.setProperty('--primary-gradient', selectedTheme.gradient);
+            // ===================================================
+
+            // 1. Animasi Mengetik (Typing Effect)
+            const typingText = document.querySelector('.typing-text');
+            const roles = ['Creative UI/UX Designer', 'Front-End Developer', 'Problem Solver'];
+            let roleIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+
+            function type() {
+                const currentRole = roles[roleIndex];
+                let displayText = '';
+
+                if (isDeleting) {
+                    displayText = currentRole.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    displayText = currentRole.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                typingText.textContent = displayText;
+
+                let typeSpeed = 150;
+                if (isDeleting) {
+                    typeSpeed /= 2;
+                }
+
+                if (!isDeleting && charIndex === currentRole.length) {
+                    typeSpeed = 2000;
+                    isDeleting = true;
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    roleIndex = (roleIndex + 1) % roles.length;
+                }
+
+                setTimeout(type, typeSpeed);
+            }
+
+            type();
+
+            // ==================================
+            // == JAVASCRIPT UNTUK BACKGROUND SLIDER (Revisi) ==
+            // ==================================
+            const heroBackgroundSlider = document.getElementById('hero-background-slider');
+            const images = [
+                'images/Viona4.jpeg',
+                'images/Viona2.jpeg' 
+            ];
+            let currentImageIndex = 0;
+
+            function changeHeroBackground() {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                const imageUrl = images[currentImageIndex];
+                heroBackgroundSlider.style.backgroundImage = `url('${imageUrl}')`;
+            }
+
+            heroBackgroundSlider.style.backgroundImage = `url('${images[0]}')`; 
+            setInterval(changeHeroBackground, 5000); 
+
+        });
+
+        // 2. Animasi Saat Scroll (Reveal Effect)
+        function reveal() {
+            var reveals = document.querySelectorAll('.reveal');
+            var skillLevels = document.querySelectorAll('.skill-level');
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; 
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+            
+            for (var m = 0; m < skillLevels.length; m++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = skillLevels[m].getBoundingClientRect().top;
+                var elementVisible = 50; 
+
+                if (elementTop < windowHeight - elementVisible) {
+                    skillLevels[m].classList.add('active');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', reveal);
+        reveal();
+        
+        // 3. Navigasi Aktif Saat Scroll
+        const sections = document.querySelectorAll('section');
+        const navLi = document.querySelectorAll('nav ul li a');
+
+        window.addEventListener('scroll', () => {
+            let current = 'hero'; 
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLi.forEach(a => {
+                a.classList.remove('active');
+                // Perbarui ini untuk mencocokkan link baru
+                if (a.getAttribute('href') == '#' + current) {
+                    a.classList.add('active');
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
