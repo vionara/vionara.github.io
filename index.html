@@ -753,52 +753,101 @@
         }
         
         @media(max-width: 768px) {
-            /* ... (Aturan CSS mobile kamu yang lain) ... */
+            /* ... (Aturan CSS mobile kamu yang sudah ada untuk nav, hero, skills, about) ... */
 
-            /* ===== CSS KHUSUS UNTUK NAVIGASI MOBILE ===== */
-            nav {
-                flex-direction: column; /* Logo di atas, menu di bawah */
-                padding: 1rem 1rem; /* Padding atas/bawah 1rem, kiri/kanan 1rem */
-                align-items: center; /* Pusatkan logo secara horizontal */
-            }
-
-            nav .logo {
-                margin-bottom: 0.75rem; /* Jarak antara logo dan daftar menu */
-            }
-
-            nav ul {
-                padding: 0; /* Hapus padding default ul */
-                width: 100%; /* Buat ul mengisi lebar nav */
-                text-align: center; /* Pusatkan item li di dalamnya */
-                margin: 0; /* Hapus margin default ul */
-            }
-
-            nav ul li {
-                display: inline-block; /* Agar item bisa sejajar dan wrap */
-                margin: 0.2rem 0.3rem; /* Jarak kecil antar item menu (atas/bawah 0.2rem, kiri/kanan 0.3rem) */
-            }
-
-            nav ul li a {
-                font-size: 0.9rem; /* Ukuran font menu sedikit lebih kecil */
-                padding: 0.4rem 0.6rem; /* Padding di dalam link agar mudah diklik (atas/bawah 0.4rem, kiri/kanan 0.6rem) */
-                display: block; /* Agar padding bekerja */
-                border-radius: 4px; /* Opsi: tambahkan sedikit lengkungan sudut */
-                transition: background-color 0.2s ease; /* Opsi: transisi halus saat disentuh */
-            }
-             nav ul li a:hover, /* Efek saat disentuh/hover */
-             nav ul li a:active {
-                  background-color: rgba(0, 0, 0, 0.05); /* Warna latar sedikit gelap saat disentuh */
+             /* ===== PERBAIKAN UNTUK CONTACT ME (VERSI BARU) ===== */
+             .contact-content {
+                 /* Menghapus grid agar tumpuk alami */
+                 display: block; /* Ganti dari grid ke block */
+                 padding: 1.5rem 1rem; /* Atur padding */
              }
-             nav ul li a.active { /* Link yang sedang aktif */
-                 color: var(--primary-color); /* Pastikan warna aktif tetap */
-                 font-weight: 600; /* Tebalkan sedikit */
-                 background-color: transparent; /* Jangan beri background gelap jika aktif */
-             }
-            /* ============================================== */
 
-            /* ... (Aturan CSS mobile kamu yang lain) ... */
+             #contact form {
+                 /* Pastikan form mengisi lebar */
+                 width: 100%;
+                 margin-bottom: 2.5rem; /* Beri jarak bawah ke Contact Info */
+             }
+
+             #contact .form-group {
+                 /* Biarkan default (flex-direction: column) */
+                 margin-bottom: 1rem; /* Jarak antar grup (label+input) */
+             }
+
+             #contact label {
+                 display: block; /* Pastikan label di atas input */
+                 margin-bottom: 0.3rem; /* Jarak kecil label ke input */
+                 font-size: 0.9rem;
+                 color: var(--text-secondary);
+             }
+
+             #contact input,
+             #contact textarea {
+                 width: 100%; /* Buat input/textarea mengisi lebar form */
+                 padding: 0.8rem; /* Kembalikan padding default atau sesuaikan */
+                 font-size: 1rem; /* Kembalikan font size default atau sesuaikan */
+                 border: 1px solid #ddd; /* Pastikan border terlihat */
+                 border-radius: 5px;
+                 box-sizing: border-box; /* Penting agar padding tidak menambah lebar */
+             }
+
+            #contact textarea {
+                min-height: 120px; /* Atur tinggi minimum textarea */
+            }
+
+             #contact .btn {
+                 /* Atur tombol agar tidak terlalu lebar jika perlu */
+                 width: auto; /* Lebar otomatis sesuai teks */
+                 padding: 0.8rem 1.5rem; /* Sesuaikan padding tombol */
+                 margin-top: 0.5rem; /* Beri sedikit jarak atas */
+             }
+
+             .contact-info {
+                  /* Tidak perlu margin-top lagi karena .contact-content bukan grid */
+                  width: 100%; /* Pastikan mengisi lebar */
+             }
+
+             .contact-info h3 {
+                  text-align: center;
+                  margin-bottom: 1.5rem;
+                  font-size: 1.3rem; /* Sesuaikan ukuran judul */
+             }
+
+             .contact-info .info-item {
+                 margin-bottom: 1rem;
+                 display: flex; /* Pastikan ikon dan teks sejajar */
+                 align-items: flex-start; /* Rata atas ikon dan teks */
+             }
+
+             .contact-info .info-icon {
+                 font-size: 1.2rem; /* Ukuran ikon */
+                 width: 30px; /* Lebar area ikon */
+                 margin-right: 1rem; /* Jarak ikon ke teks */
+                 text-align: center;
+                 flex-shrink: 0; /* Agar ikon tidak mengecil */
+                 padding-top: 2px; /* Sedikit turunkan ikon agar sejajar teks */
+             }
+             .contact-info .info-text {
+                 flex-grow: 1; /* Agar teks mengambil sisa ruang */
+             }
+
+             .contact-info .info-text h4 {
+                  font-size: 1rem;
+                  margin-bottom: 0.2rem; /* Jarak kecil judul ke teks */
+             }
+             .contact-info .info-text span,
+             .contact-info .info-text span a { /* Targetkan juga link di dalamnya */
+                  font-size: 0.9rem;
+                  word-break: break-all; /* Agar teks panjang/email pecah baris */
+                  color: var(--text-secondary); /* Pastikan warna link konsisten */
+                  text-decoration: none; /* Hapus garis bawah link jika tidak mau */
+             }
+              .contact-info .info-text span a:hover {
+                  color: var(--primary-color); /* Warna saat hover */
+              }
+             /* ================================================ */
+
+        } /* Akhir dari @media(max-width: 768px) */an CSS mobile kamu yang lain) ... */
         }
-        
     </style>
 </head>
 <body>
