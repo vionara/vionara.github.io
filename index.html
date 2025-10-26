@@ -753,32 +753,82 @@
         }
         
         @media(max-width: 768px) {
-            
+            /* ... (Aturan CSS mobile yang sudah ada untuk nav, hero, skills) ... */
+
+            /* ===== PENYESUAIAN TAMBAHAN UNTUK ABOUT ME ===== */
             #about .about-content {
-                padding: 1.5rem; /* Kurangi padding dari 2.5rem agar tidak terlalu mepet */
-                text-align: left; /* Kembalikan teks ke rata kiri, agar list tidak aneh */
+                padding: 1.5rem 1rem; /* Kurangi padding kiri/kanan sedikit lagi */
+                /* text-align: left; <-- Biarkan ini jika sudah ada */
             }
 
-            #about .about-img {
-                /* Margin ini sudah ada di @media 992px, pastikan masih ada */
-                /* Jika tidak ada, tambahkan baris ini: */
-                margin: 0 auto 1.5rem auto; /* Atur margin bawah jadi 1.5rem */
-            }
-
-            #about .about-img img {
-                height: auto; /* Hapus tinggi tetap agar gambar proporsional */
-                max-width: 280px; /* Batasi lebar maksimum gambar agar tidak terlalu besar */
-                 /* Baris di bawah ini penting untuk membuat max-width bekerja dengan margin auto */
+            /* Hapus #about .about-img dan #about .about-img img jika sudah ditambahkan sebelumnya */
+            /* Kita gunakan aturan dari @media 992px saja untuk .about-img */
+             #about .about-img img {
+                height: auto;
+                max-width: 80%; /* Coba gunakan persentase agar lebih fleksibel */
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
+                border-width: 2px; /* Tipiskan border gambar sedikit */
             }
 
-            #about .about-info li {
-                margin-bottom: 0.75rem; /* Beri sedikit jarak antar item list */
-                word-wrap: break-word; /* Agar email/alamat panjang bisa pindah baris */
+            #about .about-text h3 {
+                font-size: 1.3rem; /* Sedikit kecilkan judul sub-bagian */
+                 text-align: center; /* Judul ini boleh rata tengah */
             }
-             /* ============================================== */
+             #about .about-text p {
+                 text-align: justify; /* Coba buat teks rata kiri-kanan agar lebih rapi */
+             }
+             #about .about-info li {
+                 /* margin-bottom: 0.75rem; <-- Biarkan jika sudah ada */
+                 /* word-wrap: break-word; <-- Biarkan jika sudah ada */
+                 font-size: 0.9rem; /* Sedikit kecilkan teks info kontak */
+                 text-align: left; /* Pastikan list rata kiri */
+            }
+             /* ================================================= */
+
+             /* ===== PENYESUAIAN UNTUK CONTACT ME ===== */
+             .contact-content {
+                 padding: 1.5rem 1rem; /* Kurangi padding di dalam kotak contact */
+                 grid-template-columns: 1fr; /* Pastikan ini sudah ada (dari @media 992px) */
+             }
+
+             #contact form {
+                 gap: 0.8rem; /* Kurangi sedikit jarak antar input form */
+             }
+
+             #contact input,
+             #contact textarea {
+                 padding: 0.7rem; /* Sedikit kurangi padding input */
+                 font-size: 0.9rem; /* Kecilkan font input sedikit */
+             }
+             
+             .contact-info {
+                  margin-top: 2rem; /* Beri jarak atas antara form dan info kontak */
+             }
+             
+             .contact-info h3 {
+                  text-align: center; /* Judul "Contact Info" boleh rata tengah */
+                  margin-bottom: 1.5rem;
+             }
+
+             .contact-info .info-item {
+                 margin-bottom: 1rem; /* Kurangi jarak antar item info */
+             }
+
+             .contact-info .info-icon {
+                 font-size: 1.3rem; /* Kecilkan ikon sedikit */
+                 width: 35px; /* Sesuaikan lebar container ikon */
+                 margin-right: 0.8rem; /* Kurangi jarak ikon ke teks */
+             }
+             .contact-info .info-text h4 {
+                  font-size: 0.95rem; /* Sedikit kecilkan judul (Address, Phone, Email) */
+             }
+             .contact-info .info-text span {
+                  font-size: 0.85rem; /* Kecilkan teks info kontak */
+                  word-break: break-all; /* Pastikan email panjang bisa pindah baris */
+             }
+             
 
         } 
 
@@ -1042,7 +1092,7 @@
     <footer>
         <div class="container footer-content">
             <div class="footer-widget">
-                <h3>Viona<span>.</span></h3>
+                <h3>Viona<span>.</span>Ra</h3>
                 <p>Creative UI/UX Designer & Developer, mengubah ide menjadi solusi digital yang fungsional dan indah.</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-twitter"></i></a>
