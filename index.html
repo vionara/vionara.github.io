@@ -753,60 +753,52 @@
         }
         
         @media(max-width: 768px) {
-            /* ... (Aturan CSS mobile kamu yang sudah ada) ... */
+            /* ... (Aturan CSS mobile kamu yang lain) ... */
 
-            /* ===== PERBAIKAN UNTUK NAVIGASI MOBILE ===== */
+            /* ===== CSS KHUSUS UNTUK NAVIGASI MOBILE ===== */
             nav {
-                /* flex-direction: column; <-- Biarkan jika sudah ada */
-                padding: 1rem; /* Sedikit kurangi padding atas/bawah nav */
+                flex-direction: column; /* Logo di atas, menu di bawah */
+                padding: 1rem 1rem; /* Padding atas/bawah 1rem, kiri/kanan 1rem */
+                align-items: center; /* Pusatkan logo secara horizontal */
             }
+
             nav .logo {
-                 margin-bottom: 0.5rem; /* Beri sedikit jarak bawah dari logo ke menu */
+                margin-bottom: 0.75rem; /* Jarak antara logo dan daftar menu */
             }
+
             nav ul {
-                /* padding: 1rem 0; <-- Hapus/komentari baris ini jika ada */
-                padding: 0; /* Hapus padding atas/bawah ul */
-                /* flex-wrap: wrap; <-- Biarkan jika sudah ada */
-                /* justify-content: center; <-- Biarkan jika sudah ada */
-                width: 100%; /* Pastikan ul mengisi lebar */
+                padding: 0; /* Hapus padding default ul */
+                width: 100%; /* Buat ul mengisi lebar nav */
+                text-align: center; /* Pusatkan item li di dalamnya */
+                margin: 0; /* Hapus margin default ul */
             }
+
             nav ul li {
-                /* margin: 0.2rem 0.5rem; <-- Hapus/komentari baris ini */
-                margin: 0 0.4rem; /* Atur margin hanya kiri/kanan, kurangi sedikit */
-                display: inline-block; /* Agar bisa wrap dengan baik */
+                display: inline-block; /* Agar item bisa sejajar dan wrap */
+                margin: 0.2rem 0.3rem; /* Jarak kecil antar item menu (atas/bawah 0.2rem, kiri/kanan 0.3rem) */
             }
-             nav ul li a {
-                 font-size: 0.85rem; /* Kecilkan sedikit font menu */
-                 padding: 0.3rem 0; /* Beri sedikit padding atas/bawah agar tidak terlalu rapat jika wrap */
-                 display: inline-block; /* Agar padding bekerja */
-             }
-             /* ========================================= */
 
-            /* ===== PERBAIKAN UNTUK ABOUT TEXT MOBILE ===== */
-             #about .about-text {
-                 padding: 0 0.5rem; /* Beri sedikit padding kiri/kanan di dalam teks */
+            nav ul li a {
+                font-size: 0.9rem; /* Ukuran font menu sedikit lebih kecil */
+                padding: 0.4rem 0.6rem; /* Padding di dalam link agar mudah diklik (atas/bawah 0.4rem, kiri/kanan 0.6rem) */
+                display: block; /* Agar padding bekerja */
+                border-radius: 4px; /* Opsi: tambahkan sedikit lengkungan sudut */
+                transition: background-color 0.2s ease; /* Opsi: transisi halus saat disentuh */
+            }
+             nav ul li a:hover, /* Efek saat disentuh/hover */
+             nav ul li a:active {
+                  background-color: rgba(0, 0, 0, 0.05); /* Warna latar sedikit gelap saat disentuh */
              }
-             #about .about-text p {
-                 /* text-align: justify; <-- Biarkan jika sudah ada */
-                 line-height: 1.7; /* Tambah sedikit jarak antar baris paragraf */
-                 margin-bottom: 1.2rem; /* Tambah jarak bawah paragraf */
+             nav ul li a.active { /* Link yang sedang aktif */
+                 color: var(--primary-color); /* Pastikan warna aktif tetap */
+                 font-weight: 600; /* Tebalkan sedikit */
+                 background-color: transparent; /* Jangan beri background gelap jika aktif */
              }
-             #about .about-info {
-                  padding-top: 0.5rem; /* Kurangi jarak atas sebelum list info */
-             }
-             #about .about-info li {
-                 /* margin-bottom: 0.75rem; <-- Biarkan jika sudah ada */
-                 /* word-wrap: break-word; <-- Biarkan jika sudah ada */
-                 /* font-size: 0.9rem; <-- Biarkan jika sudah ada */
-                 /* text-align: left; <-- Biarkan jika sudah ada */
-                 line-height: 1.6; /* Atur jarak antar baris jika teks info wrap */
-             }
-             /* =========================================== */
+            /* ============================================== */
 
-            /* ... (Aturan CSS mobile kamu yang lain untuk contact, dll) ... */
-
-        } /* Akhir dari @media(max-width: 768px) */
-
+            /* ... (Aturan CSS mobile kamu yang lain) ... */
+        }
+        
     </style>
 </head>
 <body>
